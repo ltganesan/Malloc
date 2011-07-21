@@ -1,1 +1,11 @@
-Malloc
+Malloc: Writing a Dynamic Storage Allocator
+
+My implementation of the dynamic storage allocator consists of the following fuctions, as well as some additional helper functions:
+int mm_init(void): Performs necessary initializations
+void *malloc(size_t size): returns a pointer to the allocated block payload
+void free(void *ptr): frees the block pointed to by ptr
+void *realloc(void *ptr, size_t size): returns a pointer to the allocated bock payload
+void *calloc(size_t nmemb, size_t size): allocates memory for an array of nmemb elements of size bytes each and returns a pointer to the memory, sets the memory to zero before returning
+void mm_checkheap(void): debugging function, scans the heap and checks for consistency
+
+My implementation uses a doubly linked explicit free list for memory management and a first fit scanning algorithm for allocating memory.
